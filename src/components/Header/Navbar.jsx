@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
 	// Navlinks all are here
 	const navLinks = (
 		<ul className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
-			<li className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover-bg-gray-700">
+			<li className="px-3 py-2 mx-3 mt-2 text-black transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">
 				<NavLink
 					to="/"
 					className={({ isActive }) => (isActive ? " text-blue-500" : "")}
@@ -13,7 +13,7 @@ function Navbar() {
 					Home
 				</NavLink>
 			</li>
-			<li className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover-bg-gray-700">
+			<li className="px-3 py-2 mx-3 mt-2 text-black transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">
 				<NavLink
 					to="/addproduct"
 					className={({ isActive }) => (isActive ? " text-blue-500" : "")}
@@ -21,7 +21,7 @@ function Navbar() {
 					Add Product
 				</NavLink>
 			</li>
-			<li className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover-bg-gray-700">
+			<li className="px-3 py-2 mx-3 mt-2 text-black transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">
 				<NavLink
 					to="/mycart"
 					className={({ isActive }) => (isActive ? " text-blue-500" : "")}
@@ -38,7 +38,7 @@ function Navbar() {
 	};
 
 	return (
-		<nav className="relative bg-white shadow-md dark:bg-gray-800">
+		<nav className="relative bg-white shadow-md ">
 			<div className="container px-6 py-4 mx-auto">
 				<div className="lg:flex lg:items-center lg:justify-between">
 					<div className="flex items-center justify-between">
@@ -105,7 +105,7 @@ function Navbar() {
 							<button
 								onClick={toggleMenu}
 								type="button"
-								className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+								className="text-gray-500  hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 "
 								aria-label="toggle menu"
 							>
 								{!isOpen ? (
@@ -144,7 +144,7 @@ function Navbar() {
 					</div>
 
 					<div
-						className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
+						className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
 							isOpen
 								? "translate-x-0 opacity-100"
 								: "opacity-0 -translate-x-full"
@@ -153,9 +153,12 @@ function Navbar() {
 						{navLinks}
 
 						<div className="flex items-center mt-4 lg:mt-0">
-							<button className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-600 hover:bg-blue-500 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none">
+							<Link
+								to={"/login"}
+								className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-500 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
+							>
 								<span>Login</span>
-							</button>
+							</Link>
 						</div>
 					</div>
 				</div>

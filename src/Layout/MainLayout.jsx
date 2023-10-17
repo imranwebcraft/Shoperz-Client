@@ -6,7 +6,6 @@ const MainLayout = () => {
 		<div className="font-poppins">
 			<Navbar />
 			<Outlet></Outlet>
-			<footer>Footer</footer>
 		</div>
 	);
 };
