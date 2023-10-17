@@ -1,16 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
+	// Use contetx
+	const { googleSignIn } = useContext(AuthContext);
+
+	const location = useLocation();
+	// Prevent auto scroll at the bottom
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
+
+	const handleLogIn = e => {
+		e.preventDefault();
+	};
+
+	const handleGoogleSignIn = () => {
+		googleSignIn();
+	};
+
 	return (
 		<div>
 			<section className="bg-white dark:bg-gray-900">
-				<div className="container flex items-center justify-center h-screen px-6 mx-auto">
-					<form className="w-full max-w-md">
+				<div className="container flex flex-col items-center justify-center h-screen px-6 mx-auto">
+					<form onSubmit={handleLogIn} className="w-full max-w-md">
 						<div className="flex justify-center mx-auto">
 							<img src={logo} alt="" />
 						</div>
 
-						<div className="flex items-center justify-center mt-6">
+						<div className="flex items-center justify-center mt-2">
 							<a
 								href="#"
 								className="w-1/3 font-semibold pb-4 capitalize text-center text-gray-800  sm:text-3xl border-b-2 border-blue-500 dark:border-blue-400 dark:text-white"
@@ -78,9 +97,9 @@ const Login = () => {
 								or sign in with
 							</p>
 
-							<a
-								href="#"
-								className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+							<button
+								onClick={handleGoogleSignIn}
+								className=" w-full flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
 							>
 								<svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
 									<path
@@ -102,24 +121,21 @@ const Login = () => {
 								</svg>
 
 								<span className="mx-2">Sign in with Google</span>
-							</a>
-
-							<div className="mt-6 text-center ">
-								<a
-									href="#"
-									className="text-sm text-gray-500 dark:text-blue-400"
-								>
-									Don&apos;t have an account yet?{" "}
-									<Link
-										to={"/register"}
-										className=" hover:text-blue-500 hover:underline"
-									>
-										Sign up
-									</Link>
-								</a>
-							</div>
+							</button>
 						</div>
 					</form>
+
+					<div className="mt-6 text-center ">
+						<span className="text-sm text-gray-500 dark:text-blue-400">
+							Don&apos;t have an account yet?{" "}
+							<Link
+								to={"/register"}
+								className=" hover:text-blue-500 hover:underline"
+							>
+								Sign up
+							</Link>
+						</span>
+					</div>
 				</div>
 			</section>
 		</div>

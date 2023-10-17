@@ -3,11 +3,11 @@ import banner from "../../assets/images/banner-image.jpg";
 const Banner = () => {
 	return (
 		<div className="container px-6 py-16 mx-auto text-center">
-			<div className="max-w-lg mx-auto">
-				<h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-blue-500 bg-clip-text text-transparent sm:text-5xl text-3xl font-bold  lg:text-4xl">
+			<div className="max-w-4xl mx-auto">
+				<h1 className=" w-full bg-gradient-to-r from-green-300 via-blue-500 to-blue-500 bg-clip-text text-transparent sm:text-5xl text-3xl font-bold  lg:text-6xl">
 					Tech Trends Unleashed.
 				</h1>
-				<p className="mt-6 text-gray-500 dark:text-gray-300">
+				<p className=" max-w-lg mx-auto mt-6 text-gray-500 dark:text-gray-300">
 					Discover the gadgets that redefine convenience, and the electronics
 					that shape our future.
 				</p>

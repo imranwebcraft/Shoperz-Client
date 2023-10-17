@@ -1,17 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
+import { useEffect } from "react";
 
 const Register = () => {
+	const location = useLocation();
+	// Prevent auto scroll at the bottom
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
 	return (
 		<div>
 			<section className="bg-white dark:bg-gray-900">
-				<div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
+				<div className="container flex flex-col items-center justify-center min-h-screen px-6 mx-auto">
 					<form className="w-full max-w-md">
 						<div className="flex justify-center mx-auto">
 							<img src={logo} alt="" />
 						</div>
 
-						<div className="flex items-center justify-center mt-6">
+						<div className="flex items-center justify-center mt-2">
 							<a
 								href="#"
 								className="w-1/3 font-semibold pb-4 capitalize text-center text-gray-800  sm:text-3xl border-b-2 border-blue-500 dark:border-blue-400 dark:text-white"
@@ -153,23 +159,19 @@ const Register = () => {
 
 								<span className="mx-2">Continue with Google</span>
 							</a>
-
-							<div className="mt-6 text-center ">
-								<a
-									href="#"
-									className="text-sm text-gray-500 dark:text-blue-400"
-								>
-									Don&apos;t have an account yet?{" "}
-									<Link
-										to={"/login"}
-										className=" hover:text-blue-500 hover:underline"
-									>
-										Log In
-									</Link>
-								</a>
-							</div>
 						</div>
 					</form>
+					<div className="mt-6 text-center ">
+						<span className="text-sm text-gray-500 dark:text-blue-400">
+							Don&apos;t have an account yet?{" "}
+							<Link
+								to={"/login"}
+								className=" hover:text-blue-500 hover:underline"
+							>
+								Log In
+							</Link>
+						</span>
+					</div>
 				</div>
 			</section>
 		</div>
