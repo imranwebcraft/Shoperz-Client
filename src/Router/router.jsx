@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Error from "../Pages/Error/Error";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../Private/PrivateRoute";
+import BrandProduct from "../Pages/BrandProduct/BrandProduct";
 
 const router = createBrowserRouter([
 	{
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
 			{
 				path: "/register",
 				element: <Register />,
+			},
+			{
+				path: "/brand/:id",
+				element: <BrandProduct />,
+				loader: () => fetch("http://localhost:5000/products"),
 			},
 		],
 	},

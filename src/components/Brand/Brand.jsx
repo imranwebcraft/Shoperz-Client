@@ -22,7 +22,7 @@ const Brand = () => {
 				{brands?.map(brand => {
 					return (
 						<Link
-							// to={`/brand/${brand.id}`}
+							to={`/brand/${brand.id}`}
 							key={brand.id}
 							className="flex flex-col items-center justify-center p-6 bg-opacity-25 bg-blue-100 hover:bg-none rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-100 hover:border-blue-500 border border-transparent"
 						>
