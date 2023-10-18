@@ -1,7 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const ProductDetails = () => {
+	const { user } = useContext(AuthContext);
+	const userEmail = user.email;
+
 	const product = useLoaderData();
 	const { product_name, description, brand_name, image, price, rating, type } =
 		product || {};
@@ -14,12 +20,32 @@ const ProductDetails = () => {
 		price,
 		rating,
 		type,
+		userEmail,
 	};
 
 	console.log(cartItem);
 
 	const handleAddToCart = () => {
-		console.log("Adding to card in DB");
+		fetch("http://localhost:5000/carts", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(cartItem),
+		})
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				if (data.insertedId) {
+					Swal.fire({
+						position: "top-center",
+						icon: "success",
+						title: "Product added to the Cart",
+						showConfirmButton: false,
+						timer: 1000,
+					});
+				}
+			});
 	};
 
 	return (

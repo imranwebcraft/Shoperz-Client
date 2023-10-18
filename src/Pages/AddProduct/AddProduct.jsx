@@ -45,7 +45,7 @@ const AddProduct = () => {
 						icon: "success",
 						title: "Product added to the database",
 						showConfirmButton: false,
-						timer: 1500,
+						timer: 1000,
 					});
 				}
 			});
