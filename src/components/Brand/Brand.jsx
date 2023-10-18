@@ -6,10 +6,10 @@ const Brand = () => {
 	const brands = useBrands();
 
 	return (
-		<section className="px-4 py-24 mx-auto max-w-7xl  pb-6 pt-16 sm:px-6 lg:px-8">
+		<section className="px-4 py-24 mx-auto max-w-7xl  pb-6 pt-16 sm:px-6">
 			{/* Section Title */}
 			<div className=" mb-10 text-center">
-				<h1 className=" text-3xl font-semibold text-gray-800 ">
+				<h1 className=" text-3xl font-bold text-gray-900 ">
 					Explore Leading Tech Brands
 				</h1>
 				<p className=" text-gray-500 text-sm mt-2">
@@ -31,7 +31,7 @@ const Brand = () => {
 								alt="Brand Logo"
 								className="block object-contain h-16"
 							/>
-							<p>{brand.brand_name}</p>
+							<p className="font-medium">{brand.brand_name}</p>
 						</Link>
 					);
 				})}
