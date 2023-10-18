@@ -142,13 +142,6 @@ function Navbar() {
 									<span>Login</span>
 								</Link>
 							)}
-
-							{/* <Link
-								to={"/login"}
-								className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-500 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
-							>
-								<span>Login</span>
-							</Link> */}
 						</div>
 					</div>
 				</div>

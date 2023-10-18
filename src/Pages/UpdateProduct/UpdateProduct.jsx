@@ -1,55 +1,6 @@
-import Swal from "sweetalert2";
-import addProduct1 from "../../assets/images/addproduct(1).webp";
 import Footer from "../../components/Footer/Footer";
-// import addProduct2 from "../../assets/images/addproduct(2).webp";
-// import addProduct3 from "../../assets/images/addproduct(3).webp";
 
-const AddProduct = () => {
-	// Add product event handler
-	const handleAddProduct = e => {
-		e.preventDefault();
-		const form = e.target;
-
-		const product_name = form.product_name.value;
-		const brand_name = form.brand_name.value;
-		const image = form.image.value;
-		const price = form.price.value;
-		const rating = form.rating.value;
-		const type = form.type.value;
-		const description = form.description.value;
-
-		const newProduct = {
-			product_name,
-			brand_name,
-			image,
-			price,
-			rating,
-			type,
-			description,
-		};
-		console.log(newProduct);
-
-		fetch("http://localhost:5000/products", {
-			method: "POST",
-			headers: {
-				"content-type": "application/json",
-			},
-			body: JSON.stringify(newProduct),
-		})
-			.then(res => res.json())
-			.then(data => {
-				if (data.insertedId) {
-					Swal.fire({
-						position: "top-center",
-						icon: "success",
-						title: "Product added to the database",
-						showConfirmButton: false,
-						timer: 1500,
-					});
-				}
-			});
-	};
-
+const UpdateProduct = () => {
 	return (
 		<>
 			<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
@@ -65,7 +16,7 @@ const AddProduct = () => {
 					<img src={addProduct1} alt="" />
 				</div>
 
-				<form onSubmit={handleAddProduct}>
+				<form>
 					<div className="grid gap-6 mb-6 md:grid-cols-2">
 						{/* Product name */}
 						<div>
@@ -74,7 +25,6 @@ const AddProduct = () => {
 							</label>
 							<input
 								type="text"
-								name="product_name"
 								id="product_name"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Enter product name"
@@ -89,7 +39,6 @@ const AddProduct = () => {
 							</label>
 							<input
 								type="text"
-								name="brand_name"
 								id="brand_name"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Enter brand name"
@@ -103,7 +52,6 @@ const AddProduct = () => {
 							</label>
 							<input
 								type="text"
-								name="image"
 								id="company"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Product image"
@@ -117,7 +65,6 @@ const AddProduct = () => {
 							</label>
 							<input
 								type="number"
-								name="price"
 								id="price"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="...TK"
@@ -132,8 +79,7 @@ const AddProduct = () => {
 							</label>
 							<input
 								type="number"
-								name="rating"
-								id="rating"
+								id="price"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Rating"
 								max={5}
@@ -146,20 +92,19 @@ const AddProduct = () => {
 								htmlFor="countries"
 								className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 							>
-								Product Type
+								Select an option
 							</label>
 							<select
-								name="type"
 								id="countries"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-								defaultValue="Product type"
 							>
-								<option value="Product type">Product type</option>
-								<option value="SmartPhone">Smart Phone</option>
-								<option value="Laptop">Laptop</option>
-								<option value="PlayStation">Play Station</option>
-								<option value="Camera">Camera</option>
-								<option value="Processor">Processor</option>
+								<option value="Choose a country" selected>
+									Choose a country
+								</option>
+								<option value="US">United States</option>
+								<option value="CA">Canada</option>
+								<option value="FR">France</option>
+								<option value="DE">Germany</option>
 							</select>
 						</div>
 					</div>
@@ -168,7 +113,6 @@ const AddProduct = () => {
 							Product description
 						</label>
 						<textarea
-							name="description"
 							rows="4"
 							className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Write your product description here..."
@@ -189,4 +133,4 @@ const AddProduct = () => {
 	);
 };
 
-export default AddProduct;
+export default UpdateProduct;
