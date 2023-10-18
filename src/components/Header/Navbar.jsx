@@ -1,8 +1,25 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
+import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 function Navbar() {
+	// Use context data
+	const { user, logOut } = useContext(AuthContext);
+	console.log(user);
+
+	// Logout event handler
+	const handleLogOut = () => {
+		logOut()
+			.then(() => {
+				toast.success("Log out successfull!");
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	};
+
 	// Navlinks all are here
 	const navLinks = (
 		<ul className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
@@ -98,12 +115,40 @@ function Navbar() {
 						{navLinks}
 
 						<div className="flex items-center mt-4 lg:mt-0">
-							<Link
+							{user ? (
+								<>
+									<p className=" text-sm bg-indigo-100 px-2 py-1 rounded ">
+										{user.displayName}
+									</p>
+									<div className="h-8 w-h-8 mx-2">
+										<img
+											className="h-full w-full rounded-full object-cover object-center"
+											src={user.photoURL}
+											alt=""
+										/>
+									</div>
+									<Link
+										onClick={handleLogOut}
+										className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-500 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
+									>
+										<span>Log Out</span>
+									</Link>
+								</>
+							) : (
+								<Link
+									to={"/login"}
+									className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-500 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
+								>
+									<span>Login</span>
+								</Link>
+							)}
+
+							{/* <Link
 								to={"/login"}
 								className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-500 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
 							>
 								<span>Login</span>
-							</Link>
+							</Link> */}
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,22 @@
+import addProduct1 from "../../assets/images/addproduct(1).webp";
+// import addProduct2 from "../../assets/images/addproduct(2).webp";
+// import addProduct3 from "../../assets/images/addproduct(3).webp";
+
 const AddProduct = () => {
 	return (
 		<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
+			{/* Section Title */}
+			<div className=" flex flex-col justify-center items-center text-center">
+				<h1 className=" text-3xl font-bold text-gray-900 ">
+					Add product to the <span className=" text-blue-500 ">Database</span>
+				</h1>
+				<p className=" max-w-md text-gray-500 text-sm mt-2">
+					Enter product details and click Add Product button to add the product
+					to the database
+				</p>
+				<img src={addProduct1} alt="" />
+			</div>
+
 			<form>
 				<div className="grid gap-6 mb-6 md:grid-cols-2">
 					{/* Product name */}
@@ -39,7 +55,7 @@ const AddProduct = () => {
 							type="text"
 							id="company"
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-							placeholder="Flowbite"
+							placeholder="Product image"
 							required
 						/>
 					</div>
@@ -57,6 +73,7 @@ const AddProduct = () => {
 						/>
 					</div>
 					{/* Rating */}
+
 					<div>
 						<label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
 							Rating

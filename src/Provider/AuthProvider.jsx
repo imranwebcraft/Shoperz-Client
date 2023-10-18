@@ -1,6 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+	GoogleAuthProvider,
+	createUserWithEmailAndPassword,
+	onAuthStateChanged,
+	signInWithPopup,
+	signOut,
+	updateProfile,
+} from "firebase/auth";
 import auth from "../Config/Firebase.config";
 
 export const AuthContext = createContext();
@@ -15,15 +22,54 @@ const AuthProvider = ({ children }) => {
 	// eslint-disable-next-line no-unused-vars
 	const [loading, setLoading] = useState(true);
 
+	// Create new user
+	const createUser = (email, password) => {
+		setLoading(true);
+		return createUserWithEmailAndPassword(auth, email, password);
+	};
+
+	// Update user profile
+	const userProfileUpdate = (name, photo) => {
+		setLoading(true);
+		return updateProfile(auth.currentUser, {
+			displayName: name,
+			photoURL: photo,
+		});
+	};
+
 	// Google SIGN IN
 	const googleSignIn = () => {
 		setLoading(true);
 		return signInWithPopup(auth, googleProvider);
 	};
 
+	// Handle Log out
+	const logOut = () => {
+		setLoading(true);
+		return signOut(auth);
+	};
+
+	// Get cureently sign In users
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, currentUser => {
+			console.log("Obeserve", currentUser);
+			setUser(currentUser);
+			setLoading(false);
+		});
+
+		return () => {
+			unsubscribe();
+		};
+	}, []);
+
 	// Context value
 	const authInfo = {
+		user,
+		loading,
 		googleSignIn,
+		logOut,
+		createUser,
+		userProfileUpdate,
 	};
 
 	return (
