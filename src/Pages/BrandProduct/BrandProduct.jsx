@@ -41,7 +41,6 @@ const BrandProduct = () => {
 			<Slider />
 
 			{/* Product Card */}
-
 			{filterProducts.length === 0 ? (
 				<div className="w-full flex flex-col justify-center items-center mt-20">
 					<p className="  text-3xl font-bold text-gray-900 ">

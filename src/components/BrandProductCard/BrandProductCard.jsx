@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const BrandProductCard = ({ product }) => {
+	console.log(product);
 	const { product_name, brand_name, image, price, rating, type } =
 		product || {};
 	return (
@@ -52,12 +54,18 @@ const BrandProductCard = ({ product }) => {
 				</div>
 				{/*  <!-- Action base sized basic button --> */}
 				<div className="flex flex-col mt-auto gap-5 justify-end p-6 pt-0">
-					<button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-blue-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none">
+					<Link
+						to={`/product/${product._id}`}
+						className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-blue-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
+					>
 						<span>See Details</span>
-					</button>
-					<button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-blue-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none">
+					</Link>
+					<Link
+						to={"/updateproduct"}
+						className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-blue-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
+					>
 						<span>Update</span>
-					</button>
+					</Link>
 				</div>
 			</div>
 		</div>

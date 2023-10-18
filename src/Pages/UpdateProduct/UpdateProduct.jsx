@@ -13,7 +13,7 @@ const UpdateProduct = () => {
 						Enter product details and click Add Product button to add the
 						product to the database
 					</p>
-					<img src={addProduct1} alt="" />
+					<img alt="" />
 				</div>
 
 				<form>
