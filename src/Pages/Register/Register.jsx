@@ -1,10 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Register = () => {
+	// Default field focus
+	const nameRef = useRef();
+	useEffect(() => {
+		nameRef.current.focus();
+	}, []);
+
 	// Use context data
 	const { createUser, userProfileUpdate, googleSignIn } =
 		useContext(AuthContext);
@@ -26,12 +32,32 @@ const Register = () => {
 		const password = form.password.value;
 		const photo = form.photo.value;
 
+		// Validation
+
+		if (!name) {
+			return toast.error("Please fill up the form");
+		} else if (!email) {
+			return toast.error("Please enter a valid email");
+		}
+
+		if (password.length < 6) {
+			return toast.error("Password must have at least 6 character");
+		}
+
+		if (!/^(?=.*[A-Z]).*$/.test(password)) {
+			return toast.error("Please add at least one uppercase letter");
+		}
+
+		if (!/^(?=.*[\W_]).+$/.test(password)) {
+			return toast.error("Please add at least one special character");
+		}
+
 		createUser(email, password)
 			.then(result => {
-				const user = result.user;
-
-				console.log(user);
+				console.log(result.user);
 				toast.success("Account registration successfull!");
+				// Reset form data
+				form.reset();
 
 				userProfileUpdate(name, photo)
 					.then(() => {
@@ -87,6 +113,7 @@ const Register = () => {
 							</span>
 
 							<input
+								ref={nameRef}
 								type="text"
 								name="name"
 								className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -172,9 +199,11 @@ const Register = () => {
 						</div>
 
 						<div className="mt-6">
-							<button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-								Sign Up
-							</button>
+							<input
+								type="submit"
+								value="Sign Up"
+								className="w-full hover:cursor-pointer px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+							/>
 						</div>
 					</form>
 					<div className=" w-full max-w-md">
@@ -205,7 +234,7 @@ const Register = () => {
 								/>
 							</svg>
 
-							<span className="mx-2">Sign in with Google</span>
+							<span className="mx-2">Continue with Google</span>
 						</button>
 					</div>
 					<div className="mt-1 text-center ">

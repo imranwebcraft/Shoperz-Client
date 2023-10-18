@@ -1,10 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 const Login = () => {
+	// Default field focus
+	const emailRef = useRef();
+	useEffect(() => {
+		emailRef.current.focus();
+	}, []);
+
 	// Use contetx
-	const { googleSignIn } = useContext(AuthContext);
+	const { googleSignIn, userLogIn } = useContext(AuthContext);
 
 	const location = useLocation();
 	// Prevent auto scroll at the bottom
@@ -14,6 +21,22 @@ const Login = () => {
 
 	const handleLogIn = e => {
 		e.preventDefault();
+		const form = e.target;
+		// Get field value
+
+		const email = form.email.value;
+		const password = form.password.value;
+
+		userLogIn(email, password)
+			.then(result => {
+				console.log(result.user);
+				toast.success("Login successful");
+				// Reset form data
+				form.reset();
+			})
+			.catch(error => {
+				toast.error(error.message);
+			});
 	};
 
 	const handleGoogleSignIn = () => {
@@ -57,7 +80,9 @@ const Login = () => {
 							</span>
 
 							<input
+								ref={emailRef}
 								type="email"
+								name="email"
 								className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
 								placeholder="Email address"
 							/>
@@ -83,15 +108,18 @@ const Login = () => {
 
 							<input
 								type="password"
+								name="password"
 								className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
 								placeholder="Password"
 							/>
 						</div>
 
 						<div className="mt-6">
-							<button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-								Sign in
-							</button>
+							<input
+								type="submit"
+								value="Log In"
+								className="w-full hover:cursor-pointer px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+							/>
 						</div>
 					</form>
 					<div className=" w-full max-w-md">
@@ -122,7 +150,7 @@ const Login = () => {
 								/>
 							</svg>
 
-							<span className="mx-2">Sign in with Google</span>
+							<span className="mx-2">Continue with Google</span>
 						</button>
 					</div>
 
