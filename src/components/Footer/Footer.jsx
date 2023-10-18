@@ -62,7 +62,7 @@ const Footer = () => {
 						</svg>
 					</div>
 
-					<p className="mt-4 max-w-md text-center leading-relaxed text-gray-500 sm:text-left lg:mt-0">
+					<p className="mt-4 text-base max-w-md text-center leading-relaxed text-gray-500 sm:text-left lg:mt-0">
 						Stay updated with the latest in tech and electronics. Explore
 						reviews, guides, and more.
 					</p>
@@ -248,7 +248,7 @@ const Footer = () => {
 						<p className="text-lg font-medium text-gray-900">Stay in Touch</p>
 
 						<div className="mx-auto mt-8 max-w-md sm:ms-0">
-							<p className="text-center leading-relaxed text-gray-500 ltr:sm:text-left rtl:sm:text-right">
+							<p className="text-center md:text-left text-sm leading-relaxed text-gray-500 ltr:sm:text-left">
 								Tech enthusiasts, this is your digital haven. Explore, learn,
 								and stay ahead.
 							</p>
