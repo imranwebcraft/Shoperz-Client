@@ -1,12 +1,20 @@
 import Footer from "../../components/Footer/Footer";
 import updateDBImage from "../../assets/images/addproduct(3).webp";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 const UpdateProduct = () => {
 	// Get desire product details from database
 	const loadededProduct = useLoaderData();
-	console.log(loadededProduct);
+
+	// use location hook
+	const location = useLocation();
+	// Prevent auto scroll at the bottom
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
 
 	const {
 		_id,
@@ -73,6 +81,10 @@ const UpdateProduct = () => {
 
 	return (
 		<>
+			{/* Helmet */}
+			<Helmet>
+				<title> Update Product </title>
+			</Helmet>
 			<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
 				{/* Section Title */}
 				<div className=" flex flex-col justify-center items-center text-center">
@@ -191,6 +203,7 @@ const UpdateProduct = () => {
 								<option value="Play Station">Play Station</option>
 								<option value="Camera">Camera</option>
 								<option value="Processor">Processor</option>
+								<option value="Others">Others</option>
 							</select>
 						</div>
 					</div>

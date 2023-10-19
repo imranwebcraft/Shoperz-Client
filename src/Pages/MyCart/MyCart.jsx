@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import cartPhoto from "../../assets/images/cart(1).webp";
 import Footer from "../../components/Footer/Footer";
 import emptyCart from "../../assets/images/emptycart.webp";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyCart = () => {
 	// Use context data
@@ -20,6 +21,13 @@ const MyCart = () => {
 		);
 		setCarts(filterCartByUserEmail);
 	}, [allCarts, user]);
+
+	// use location hook
+	const location = useLocation();
+	// Prevent auto scroll at the bottom
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
 
 	// delete event handler
 	const handleDelete = id => {
@@ -77,6 +85,10 @@ const MyCart = () => {
 
 	return (
 		<div>
+			{/* Helmet */}
+			<Helmet>
+				<title>Shoperz | My Cart</title>
+			</Helmet>
 			<div className=" max-w-7xl mx-auto mt-12">
 				{/* Section Title */}
 				<div className="flex flex-col justify-center items-center text-center">

@@ -1,8 +1,18 @@
 import Swal from "sweetalert2";
 import addProduct1 from "../../assets/images/addproduct(1).webp";
 import Footer from "../../components/Footer/Footer";
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const AddProduct = () => {
+	// use location hook
+	const location = useLocation();
+	// Prevent auto scroll at the bottom
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
+
 	// Add product event handler
 	const handleAddProduct = e => {
 		e.preventDefault();
@@ -48,12 +58,16 @@ const AddProduct = () => {
 						showConfirmButton: false,
 						timer: 1000,
 					});
+					form.reset();
 				}
 			});
 	};
 
 	return (
 		<>
+			<Helmet>
+				<title>Shoperz | Add Product</title>
+			</Helmet>
 			<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
 				{/* Section Title */}
 				<div className=" flex flex-col justify-center items-center text-center">
@@ -172,6 +186,7 @@ const AddProduct = () => {
 								<option value="Play Station">Play Station</option>
 								<option value="Camera">Camera</option>
 								<option value="Processor">Processor</option>
+								<option value="Others">Others</option>
 							</select>
 						</div>
 					</div>

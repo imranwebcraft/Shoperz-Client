@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const ProductDetails = () => {
 	const { user } = useContext(AuthContext);
@@ -22,6 +23,13 @@ const ProductDetails = () => {
 		type,
 		userEmail,
 	};
+
+	// use location hook
+	const location = useLocation();
+	// Prevent auto scroll at the bottom
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
 
 	const handleAddToCart = () => {
 		fetch("https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/carts", {
@@ -48,6 +56,10 @@ const ProductDetails = () => {
 
 	return (
 		<section className=" px-4 pb-6 pt-16 sm:px-6 lg:px-8">
+			{/* Helmet */}
+			<Helmet>
+				<title> {product_name} </title>
+			</Helmet>
 			{/* Section Title */}
 			<div className=" flex flex-col justify-center items-center text-center">
 				<h1 className=" text-3xl font-bold text-gray-900 ">

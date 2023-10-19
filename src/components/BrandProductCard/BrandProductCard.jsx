@@ -14,13 +14,13 @@ const BrandProductCard = ({ product }) => {
 				</figure>
 				{/*  <!-- Body--> */}
 				<div className="p-6">
-					<div className="mb-4 flex justify-between">
-						<h3 className="text-xl font-medium text-slate-700">
+					<div className="mb-4 flex gap-2 justify-between items-center">
+						<h3 className="flex-grow text-xl font-medium text-slate-700">
 							{product_name}
 						</h3>
-						<p className="text-sm text-orange-500 font-medium">{type}</p>
+						<p className=" text-sm text-orange-500 font-medium">{type}</p>
 					</div>
-					<div className="mt-auto flex justify-between gap-2 ">
+					<div className="mt-auto flex justify-between items-center gap-2 ">
 						<p> ${price}</p>
 						<div>
 							<Rating

@@ -4,11 +4,13 @@ import BrandProductCard from "../../components/BrandProductCard/BrandProductCard
 import Slider from "../../components/Slider/Slider";
 import Footer from "../../components/Footer/Footer";
 import noProduct from "../../assets/images/noProduct.webp";
+import { Helmet } from "react-helmet-async";
 
 const BrandProduct = () => {
 	const { id } = useParams();
 	// Load all brand data
 	const brands = useBrands();
+	console.log(brands);
 
 	// Load all product from database
 	const products = useLoaderData();
@@ -25,6 +27,11 @@ const BrandProduct = () => {
 
 	return (
 		<div className="container px-6 py-4 mx-auto mt-5">
+			{/* Helmet */}
+			<Helmet>
+				<title> Brand Product </title>
+			</Helmet>
+
 			{/* Section Title */}
 			<div className=" mt-8 flex flex-col justify-center items-center text-center">
 				<h1 className=" text-3xl font-bold text-gray-900 ">

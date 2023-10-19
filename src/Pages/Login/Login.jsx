@@ -1,8 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
 import { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
 	// Default field focus
 	const emailRef = useRef();
@@ -13,11 +14,17 @@ const Login = () => {
 	// Use contetx
 	const { googleSignIn, userLogIn } = useContext(AuthContext);
 
+	// Use naviagte hook
+	const navigate = useNavigate();
+
+	// use location hook
 	const location = useLocation();
 	// Prevent auto scroll at the bottom
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [location.pathname]);
+
+	console.log(location);
 
 	const handleLogIn = e => {
 		e.preventDefault();
@@ -33,6 +40,7 @@ const Login = () => {
 				toast.success("Login successful");
 				// Reset form data
 				form.reset();
+				navigate(location.state ? location.state : "/");
 			})
 			.catch(error => {
 				toast.error(error.message);
@@ -40,11 +48,21 @@ const Login = () => {
 	};
 
 	const handleGoogleSignIn = () => {
-		googleSignIn();
+		googleSignIn()
+			.then(() => {
+				toast.success("Google sign in successful");
+				navigate(location.state ? location.state : "/");
+			})
+			.catch(() => {
+				toast.error("Something went wrong!");
+			});
 	};
 
 	return (
 		<div>
+			<Helmet>
+				<title>Shoperz | Login</title>
+			</Helmet>
 			<section className="bg-white dark:bg-gray-900">
 				<div className="container flex flex-col items-center justify-center h-screen px-6 mx-auto">
 					<form onSubmit={handleLogIn} className="w-full max-w-md">

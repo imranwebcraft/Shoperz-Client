@@ -1,8 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
 import { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 	// Default field focus
@@ -10,6 +11,9 @@ const Register = () => {
 	useEffect(() => {
 		nameRef.current.focus();
 	}, []);
+
+	// Navigate hook
+	const navigate = useNavigate();
 
 	// Use context data
 	const { createUser, userProfileUpdate, googleSignIn } =
@@ -58,7 +62,8 @@ const Register = () => {
 				toast.success("Account registration successfull!");
 				// Reset form data
 				form.reset();
-
+				// Navigate user to homepage after register
+				navigate("/");
 				userProfileUpdate(name, photo)
 					.then(() => {
 						toast.success("Profile update successful");
@@ -73,11 +78,21 @@ const Register = () => {
 	};
 
 	const handleGoogleSignIn = () => {
-		googleSignIn();
+		googleSignIn()
+			.then(() => {
+				toast.success("Google sign in successful");
+				navigate("/");
+			})
+			.then(() => {
+				toast.error("Something went wrong!");
+			});
 	};
 
 	return (
 		<div>
+			<Helmet>
+				<title>Shoperz | Register</title>
+			</Helmet>
 			<section className="bg-white dark:bg-gray-900">
 				<div className="container flex flex-col items-center justify-center min-h-screen px-6 mx-auto">
 					<form onSubmit={handleSignUp} className="w-full max-w-md">
