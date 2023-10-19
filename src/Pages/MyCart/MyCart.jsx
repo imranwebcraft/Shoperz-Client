@@ -156,7 +156,7 @@ const MyCart = () => {
 												<div className="flex flex-1 items-center justify-end gap-2">
 													<button
 														onClick={() => handleDelete(_id)}
-														className="text-gray-600 transition hover:text-red-600"
+														className="text-gray-600 dark:text-gray-200 dark:hover:text-red-600 transition hover:text-red-600"
 													>
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
