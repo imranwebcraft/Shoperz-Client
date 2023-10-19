@@ -37,8 +37,6 @@ const MyCart = () => {
 			});
 	};
 
-	console.log(carts);
-
 	return (
 		<div>
 			<div className=" max-w-7xl mx-auto mt-12">
