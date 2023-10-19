@@ -1,7 +1,7 @@
-import product_one from "../assets/images/product(1).jpg";
-import product_two from "../assets/images/product(4).jpg";
-import product_theree from "../assets/images/product(5).jpg";
-import product_four from "../assets/images/product(2).jpg";
+import product_one from "../../assets/images/product(1).jpg";
+import product_two from "../../assets/images/product(4).jpg";
+import product_theree from "../../assets/images/product(5).jpg";
+import product_four from "../../assets/images/product(2).jpg";
 
 const FeatureOne = () => {
 	return (
@@ -10,13 +10,25 @@ const FeatureOne = () => {
 				<div className="relative">
 					<div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
 						<div className="ml-auto lg:col-start-2 lg:max-w-2xl">
-							<p className="text-base font-semibold leading-6 text-blue-500 uppercase">
+							<p
+								data-aos="zoom-in"
+								data-aos-duration="1000"
+								className="text-base font-semibold leading-6 text-blue-500 uppercase"
+							>
 								Explore Our Products
 							</p>
-							<h4 className="mt-2 text-2xl font-bold leading-8 text-gray-900 dark:text-white sm:text-3xl sm:leading-9">
+							<h4
+								data-aos="zoom-in"
+								data-aos-duration="1100"
+								className="mt-2 text-2xl font-bold leading-8 text-gray-900 dark:text-white sm:text-3xl sm:leading-9"
+							>
 								Discover a World of Innovation
 							</h4>
-							<p className="mt-4 leading-6 text-gray-500 dark:text-gray-300">
+							<p
+								data-aos="zoom-in"
+								data-aos-duration="1200"
+								className="mt-4 leading-6 text-gray-500 dark:text-gray-300"
+							>
 								Welcome to our world of cutting-edge technology and innovation.
 								Our platform offers a seamless and powerful collaborative space
 								for your entire team to explore, track, and share the latest
@@ -24,7 +36,11 @@ const FeatureOne = () => {
 								fingertips, you can enhance your shopping experience like never
 								before.
 							</p>
-							<ul className="gap-6 mt-8 md:grid md:grid-cols-2">
+							<ul
+								data-aos="zoom-in"
+								data-aos-duration="1300"
+								className="gap-6 mt-8 md:grid md:grid-cols-2"
+							>
 								<li className="mt-6 lg:mt-0">
 									<div className="flex">
 										<span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-blue-800 bg-blue-100 rounded-full dark:text-blue-500 dark:bg-transparent">

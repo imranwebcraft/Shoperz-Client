@@ -9,7 +9,7 @@ const Slider = () => {
 	}, [location.pathname]);
 
 	useEffect(() => {
-		const slider = new Glide(".glide-03", {
+		const slider = new Glide(".glide", {
 			type: "carousel",
 			focusAt: "center",
 			perView: 3,
@@ -39,7 +39,7 @@ const Slider = () => {
 	return (
 		<>
 			{/*<!-- Component: Carousel with indicators & controls inside --> */}
-			<div className="glide-03 relative w-full mt-10">
+			<div className="glide relative w-full mt-10">
 				{/*    <!-- Slides --> */}
 				<div className="overflow-hidden" data-glide-el="track">
 					<ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
