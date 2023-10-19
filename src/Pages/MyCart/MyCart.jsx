@@ -5,6 +5,7 @@ import cartPhoto from "../../assets/images/cart(1).webp";
 import Footer from "../../components/Footer/Footer";
 import toast from "react-hot-toast";
 import emptyCart from "../../assets/images/emptycart.webp";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
 	// Use context data
@@ -23,16 +24,51 @@ const MyCart = () => {
 
 	// delete event handler
 	const handleDelete = id => {
-		console.log("Deleting this item", id);
-		fetch(`http://localhost:5000/carts/${id}`, {
-			method: "DELETE",
-		})
-			.then(res => res.json())
-			.then(data => {
-				if (data.deletedCount === 1) {
-					toast.success("Delete successful");
-					const remainingCartItems = carts?.filter(cart => cart._id !== id);
-					setCarts(remainingCartItems);
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+				confirmButton: "btn btn-success",
+				cancelButton: "btn btn-danger",
+			},
+			buttonsStyling: true,
+		});
+
+		swalWithBootstrapButtons
+			.fire({
+				title: "Are you sure?",
+				text: "You won't be able to revert this!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#d33 ",
+				cancelButtonColor: "#3085d6",
+				confirmButtonText: "Yes, delete it!",
+				cancelButtonText: "No, cancel!",
+				reverseButtons: false,
+			})
+			.then(result => {
+				if (result.isConfirmed) {
+					fetch(`http://localhost:5000/carts/${id}`, {
+						method: "DELETE",
+					})
+						.then(res => res.json())
+						.then(data => {
+							if (data.deletedCount === 1) {
+								swalWithBootstrapButtons.fire(
+									"Deleted!",
+									"Removed from your cart✅",
+									"success"
+								);
+								const remainingCartItems = carts?.filter(
+									cart => cart._id !== id
+								);
+								setCarts(remainingCartItems);
+							}
+						});
+				} else if (result.dismiss === Swal.DismissReason.cancel) {
+					swalWithBootstrapButtons.fire(
+						"Cancelled",
+						"Your cart item is safe😍",
+						"error"
+					);
 				}
 			});
 	};

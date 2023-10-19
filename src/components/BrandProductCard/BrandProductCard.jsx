@@ -57,7 +57,7 @@ const BrandProductCard = ({ product }) => {
 						to={`/product/${product._id}`}
 						className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-blue-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
 					>
-						<span>See Details</span>
+						<span>Details</span>
 					</Link>
 					<Link
 						to={`/updateproduct/${_id}`}
