@@ -21,7 +21,7 @@ const ThemeToggle = () => {
 	};
 
 	return (
-		<div className="mx-2">
+		<div className="mx-2 flex justify-center items-center">
 			<Switch onChange={toggleDarkMode} checked={isDarkMode} />
 		</div>
 	);
