@@ -2,12 +2,12 @@ import banner from "../../assets/images/banner-image.jpg";
 
 const Banner = () => {
 	return (
-		<div className="px-6 py-28 mx-auto text-center">
+		<div className="px-6 py-28 mx-auto text-center dark:bg-gray-950 overflow-x-hidden">
 			<div className="max-w-4xl mx-auto">
 				<h1
 					className="
 				 w-full bg-gradient-to-r from-green-300 via-blue-500 to-blue-500 bg-clip-text text-transparent sm:text-5xl text-3xl font-bold  lg:text-6xl"
-					data-aos="zoom-out-up"
+					data-aos="fade-up"
 					data-aos-easing="ease-in"
 					data-aos-duration="1000"
 				>
@@ -34,7 +34,7 @@ const Banner = () => {
 					data-aos="fade-up"
 					data-aos-easing="ease-in"
 					data-aos-duration="1600"
-					className="mt-3 text-sm text-gray-600 "
+					className="mt-3 font-medium text-gray-600 text-sm dark:text-gray-400"
 				>
 					No credit card required
 				</p>

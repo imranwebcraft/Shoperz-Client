@@ -5,8 +5,8 @@ import product_four from "../../assets/images/product(2).jpg";
 
 const FeatureOne = () => {
 	return (
-		<div>
-			<div className="relative max-w-screen-xl p-4 px-4 mx-auto bg-white dark:bg-gray-800 sm:px-6 lg:px-8 py-26 lg:mt-20">
+		<div className="dark:bg-gray-950 py-24">
+			<div className="relative max-w-screen-xl p-4 px-4 mx-auto bg-white dark:bg-gray-950  sm:px-6 lg:px-8">
 				<div className="relative">
 					<div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
 						<div className="ml-auto lg:col-start-2 lg:max-w-2xl">
@@ -127,13 +127,13 @@ const FeatureOne = () => {
 							<div className="relative space-y-4">
 								<div className="flex items-end justify-center space-x-4 lg:justify-start">
 									<img
-										className="w-32 rounded-lg shadow-lg md:w-56 hover:shadow-lg hover:shadow-blue-200 transition duration-200 ease-in-out"
+										className="w-32 rounded-lg shadow-lg md:w-56 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-gray-900 transition duration-200 ease-in-out"
 										width="200"
 										src={product_one}
 										alt="product_image"
 									/>
 									<img
-										className="w-40 rounded-lg shadow-lg md:w-64 hover:shadow-lg hover:shadow-pink-200 transition duration-200 ease-in-out"
+										className="w-40 rounded-lg shadow-lg md:w-64 hover:shadow-lg hover:shadow-pink-200 dark:hover:shadow-gray-900 transition duration-200 ease-in-out"
 										width="260"
 										src={product_two}
 										alt="product_image"
@@ -141,13 +141,13 @@ const FeatureOne = () => {
 								</div>
 								<div className="flex items-start justify-center ml-12 space-x-4 lg:justify-start">
 									<img
-										className="w-24 rounded-lg shadow-lg md:w-40 hover:shadow-lg hover:shadow-green-200 transition duration-200 ease-in-out"
+										className="w-24 rounded-lg shadow-lg md:w-40 hover:shadow-lg hover:shadow-green-200 dark:hover:shadow-gray-900 transition duration-200 ease-in-out"
 										width="170"
 										src={product_theree}
 										alt="product_image"
 									/>
 									<img
-										className="w-32 rounded-lg shadow-lg md:w-56 hover:shadow-lg hover:shadow-gray-200 transition duration-200 ease-in-out"
+										className="w-32 rounded-lg shadow-lg md:w-56 hover:shadow-lg hover:shadow-gray-200 dark:hover:shadow-gray-900 transition duration-200 ease-in-out"
 										width="200"
 										src={product_four}
 										alt="product_image"

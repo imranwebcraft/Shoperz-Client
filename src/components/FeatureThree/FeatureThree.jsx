@@ -2,8 +2,8 @@
 
 const FeatureThree = () => {
 	return (
-		<div className=" container px-6 py-4 mx-auto mt-5">
-			<section className="dark:bg-gray-800 dark:text-gray-100">
+		<div className=" dark:bg-gray-950">
+			<section className=" dark:text-gray-100 container mx-auto">
 				<div className="container px-6 py-12 mx-auto">
 					<div className="grid items-center gap-4 xl:grid-cols-5">
 						<div
@@ -11,7 +11,7 @@ const FeatureThree = () => {
 							data-aos-duration="1000"
 							className="max-w-2xl mx-auto my-8 space-y-4 text-center xl:col-span-2 xl:text-left"
 						>
-							<h2 className="text-3xl font-bold text-gray-900">
+							<h2 className="text-3xl font-bold text-gray-900 dark:text-white">
 								Hear from Our {""}
 								<span className=" text-blue-500 ">Happy Clients</span>{" "}
 							</h2>
@@ -26,7 +26,7 @@ const FeatureThree = () => {
 									<div
 										data-aos="zoom-in-up"
 										data-aos-duration="1200"
-										className="p-6 rounded shadow-md dark:bg-gray-900"
+										className="p-6 rounded shadow-md dark:shadow-none dark:border dark:border-blue-500  dark:bg-gray-900"
 									>
 										<p>
 											&quot;I was truly amazed by the quality of service and
@@ -50,7 +50,7 @@ const FeatureThree = () => {
 									<div
 										data-aos="zoom-in-up"
 										data-aos-duration="1200"
-										className="p-6 rounded shadow-md dark:bg-gray-900"
+										className="p-6 rounded shadow-md dark:shadow-none dark:border dark:border-blue-500 dark:bg-gray-900"
 									>
 										<p>
 											&quot;The team at this company is not only professional
@@ -76,7 +76,7 @@ const FeatureThree = () => {
 									<div
 										data-aos="zoom-in-up"
 										data-aos-duration="1200"
-										className="p-6 rounded shadow-md dark:bg-gray-900"
+										className="p-6 rounded shadow-md dark:shadow-none dark:border dark:border-blue-500 dark:bg-gray-900"
 									>
 										<p>
 											&quot;Working with this company has been a pleasure. Their
@@ -100,7 +100,7 @@ const FeatureThree = () => {
 									<div
 										data-aos="zoom-in-up"
 										data-aos-duration="1200"
-										className="p-6 rounded shadow-md dark:bg-gray-900"
+										className="p-6 rounded shadow-md dark:shadow-none dark:border dark:border-blue-500 dark:bg-gray-900"
 									>
 										<p>
 											&quot;We&apos;ve been partners with this company for

@@ -7,6 +7,9 @@ export default {
 			fontFamily: {
 				poppins: "'Poppins', sans-serif",
 			},
+			borderWidth: {
+				0.5: "0.5px",
+			},
 		},
 	},
 	plugins: [require("daisyui"), require("@tailwindcss/forms")],

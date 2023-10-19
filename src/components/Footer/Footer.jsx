@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className="bg-white">
+		<footer className="bg-white dark:bg-gray-900">
 			<div className="mx-auto max-w-screen-2xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
 				<div className="lg:flex lg:items-center lg:justify-between">
 					<div className="flex justify-center text-blue-600 sm:justify-start">
@@ -62,7 +62,7 @@ const Footer = () => {
 						</svg>
 					</div>
 
-					<p className="mt-4 text-base max-w-md text-center leading-relaxed text-gray-500 sm:text-left lg:mt-0">
+					<p className="mt-4 text-base max-w-md text-center leading-relaxed text-gray-500 sm:text-left lg:mt-0 dark:text-gray-200">
 						Stay updated with the latest in tech and electronics. Explore
 						reviews, guides, and more.
 					</p>
@@ -70,12 +70,14 @@ const Footer = () => {
 
 				<div className="mt-10 grid grid-cols-1 gap-8 border-t border-gray-100 pt-10 md:grid-cols-4 lg:grid-cols-6">
 					<div className="text-center sm:text-left">
-						<p className="text-lg font-medium text-gray-900">About Us</p>
+						<p className="text-lg font-medium text-gray-900 dark:text-white">
+							About Us
+						</p>
 
 						<ul className="mt-8 space-y-4 text-sm">
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200  transition hover:text-gray-700/75"
 									href="/"
 								>
 									Company History
@@ -84,7 +86,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Meet the Team
@@ -93,7 +95,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Employee Handbook
@@ -102,7 +104,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Careers
@@ -112,12 +114,14 @@ const Footer = () => {
 					</div>
 
 					<div className="text-center sm:text-left">
-						<p className="text-lg font-medium text-gray-900">Our Services</p>
+						<p className="text-lg font-medium text-gray-900 dark:text-white">
+							Our Services
+						</p>
 
 						<ul className="mt-8 space-y-4 text-sm">
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Web Development
@@ -126,7 +130,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Web Design
@@ -135,7 +139,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Marketing
@@ -144,7 +148,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Google Ads
@@ -154,12 +158,14 @@ const Footer = () => {
 					</div>
 
 					<div className="text-center sm:text-left">
-						<p className="text-lg font-medium text-gray-900">Resources</p>
+						<p className="text-lg font-medium text-gray-900 dark:text-white">
+							Resources
+						</p>
 
 						<ul className="mt-8 space-y-4 text-sm">
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Online Guides
@@ -168,7 +174,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Conference Notes
@@ -177,7 +183,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Forum
@@ -186,7 +192,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Downloads
@@ -195,7 +201,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Upcoming Events
@@ -205,12 +211,14 @@ const Footer = () => {
 					</div>
 
 					<div className="text-center sm:text-left">
-						<p className="text-lg font-medium text-gray-900">Helpful Links</p>
+						<p className="text-lg font-medium text-gray-900 dark:text-white">
+							Helpful Links
+						</p>
 
 						<ul className="mt-8 space-y-4 text-sm">
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									FAQs
@@ -219,7 +227,7 @@ const Footer = () => {
 
 							<li>
 								<a
-									className="text-gray-700 transition hover:text-gray-700/75"
+									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
 									Support
@@ -231,7 +239,7 @@ const Footer = () => {
 									className="group flex justify-center  md:justify-start gap-1.5"
 									href="/"
 								>
-									<span className="text-gray-700 transition group-hover:text-gray-700/75">
+									<span className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition group-hover:text-gray-700/75">
 										Live Chat
 									</span>
 
@@ -248,7 +256,7 @@ const Footer = () => {
 						<p className="text-lg font-medium text-gray-900">Stay in Touch</p>
 
 						<div className="mx-auto mt-8 max-w-md sm:ms-0">
-							<p className="text-center md:text-left text-sm leading-relaxed text-gray-500 ltr:sm:text-left">
+							<p className="text-center md:text-left text-sm leading-relaxed text-gray-500 dark:text-white ltr:sm:text-left">
 								Tech enthusiasts, this is your digital haven. Explore, learn,
 								and stay ahead.
 							</p>
@@ -278,10 +286,10 @@ const Footer = () => {
 				</div>
 
 				<div className="mt-16 border-t border-gray-100 pt-6 sm:flex sm:items-center sm:justify-between">
-					<p className="text-center text-sm text-gray-500 sm:text-left">
+					<p className="text-center text-sm text-gray-500 dark:text-gray-200 sm:text-left">
 						Copyright &copy; 2022. All rights reserved.
 					</p>
-					<p className="text-center text-sm text-gray-500 sm:text-left">
+					<p className="text-center text-sm text-gray-500 dark:text-gray-200 sm:text-left">
 						Made with 💖 by Imran
 					</p>
 
@@ -291,7 +299,7 @@ const Footer = () => {
 								href="/"
 								rel="noreferrer"
 								target="_blank"
-								className="text-blue-700 transition hover:text-blue-700/75"
+								className="text-blue-700 dark:text-blue-400 transition hover:text-blue-700/75"
 							>
 								<span className="sr-only">Facebook</span>
 								<svg
@@ -314,7 +322,7 @@ const Footer = () => {
 								href="/"
 								rel="noreferrer"
 								target="_blank"
-								className="text-blue-700 transition hover:text-blue-700/75"
+								className="text-blue-700 dark:text-blue-400 transition hover:text-blue-700/75"
 							>
 								<span className="sr-only">Instagram</span>
 								<svg
@@ -337,7 +345,7 @@ const Footer = () => {
 								href="/"
 								rel="noreferrer"
 								target="_blank"
-								className="text-blue-700 transition hover:text-blue-700/75"
+								className="text-blue-700 dark:text-blue-400 transition hover:text-blue-700/75"
 							>
 								<span className="sr-only">Twitter</span>
 								<svg
