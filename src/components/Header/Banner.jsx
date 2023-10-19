@@ -2,7 +2,7 @@ import banner from "../../assets/images/banner-image.jpg";
 
 const Banner = () => {
 	return (
-		<div className="container px-6 py-16 mx-auto text-center">
+		<div className="px-6 py-28 mx-auto text-center">
 			<div className="max-w-4xl mx-auto">
 				<h1
 					className="
@@ -26,7 +26,7 @@ const Banner = () => {
 					data-aos="fade-up"
 					data-aos-easing="ease-in"
 					data-aos-duration="1400"
-					className="px-5 py-2 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-500 rounded-md hover:bg-blue-400 lg:mx-0 lg:w-auto focus:outline-none transition duration-300 "
+					className="px-5 py-2 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-500 rounded-md hover:bg-blue-400 lg:mx-0 lg:w-auto focus:outline-none transition duration-300"
 				>
 					Start shopping now
 				</button>

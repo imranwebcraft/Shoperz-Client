@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
 	return (
-		<div className="font-poppins">
+		<div className="font-poppins light">
 			<Toaster></Toaster>
 			<Navbar />
 			<Outlet></Outlet>

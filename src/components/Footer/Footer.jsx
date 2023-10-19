@@ -281,8 +281,11 @@ const Footer = () => {
 					<p className="text-center text-sm text-gray-500 sm:text-left">
 						Copyright &copy; 2022. All rights reserved.
 					</p>
+					<p className="text-center text-sm text-gray-500 sm:text-left">
+						Made with 💖 by Imran
+					</p>
 
-					<ul className="mt-4 flex justify-center gap-6 sm:mt-0 sm:justify-start">
+					<ul className="mt-2 flex justify-center gap-6 sm:mt-0 sm:justify-start">
 						<li>
 							<a
 								href="/"

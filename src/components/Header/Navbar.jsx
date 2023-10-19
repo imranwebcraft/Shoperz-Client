@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/SVG/logo.svg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import ThemeToggle from "../ThemeToggle/ThemeToggle ";
 
 function Navbar() {
 	// Use context data
@@ -141,6 +142,7 @@ function Navbar() {
 									<span>Login</span>
 								</Link>
 							)}
+							<ThemeToggle />
 						</div>
 					</div>
 				</div>
