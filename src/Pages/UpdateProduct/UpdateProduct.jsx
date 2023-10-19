@@ -34,16 +34,26 @@ const UpdateProduct = () => {
 
 						{/* Brand Name */}
 						<div>
-							<label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-								Brand name
+							<label
+								htmlFor="countries"
+								className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>
+								Brand Name
 							</label>
-							<input
-								type="text"
-								id="brand_name"
+							<select
+								name="brand_name"
+								id="countries"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-								placeholder="Enter brand name"
-								required
-							/>
+								defaultValue="Select Brand"
+							>
+								<option value="Select Brand">Select Brand</option>
+								<option value="Apple">Apple</option>
+								<option value="Google">Google</option>
+								<option value="Samsung">Samsung</option>
+								<option value="Sony">Sony</option>
+								<option value="Intel">Intel</option>
+								<option value="Microsoft">Microsoft</option>
+							</select>
 						</div>
 						{/* Product Image */}
 						<div>

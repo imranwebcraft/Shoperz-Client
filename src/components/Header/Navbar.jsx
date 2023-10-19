@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 function Navbar() {
 	// Use context data
 	const { user, logOut } = useContext(AuthContext);
-	console.log(user);
 
 	// Logout event handler
 	const handleLogOut = () => {
@@ -41,7 +40,7 @@ function Navbar() {
 			</li>
 			<li className="px-3 py-2 mx-3 mt-2 text-black transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">
 				<NavLink
-					to="/mycart"
+					to={"/mycart"}
 					className={({ isActive }) => (isActive ? " text-blue-500" : "")}
 				>
 					My Cart

@@ -23,8 +23,6 @@ const ProductDetails = () => {
 		userEmail,
 	};
 
-	console.log(cartItem);
-
 	const handleAddToCart = () => {
 		fetch("http://localhost:5000/carts", {
 			method: "POST",
@@ -62,32 +60,28 @@ const ProductDetails = () => {
 			<div className="mx-auto max-w-screen-xl px-6 mt-10">
 				<div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
 					<div className="col-span-4 ">
-						{/* <div>
-							<figure>
-								<img src={image} alt="" />
-							</figure>
-							<div>
-								<p>Name: {product_name}</p>
-							</div>
-						</div> */}
-
 						<div className="mx-auto max-w-md overflow-hidden bg-white ">
 							<img
 								src={image}
 								className="w-full object-cover rounded-t-lg rounded-b-md"
 								alt="product image"
 							/>
-							<div>
-								<h3 className="text-xl font-medium text-gray-900">
-									{product_name}
-								</h3>
-								<p className="mt-1 text-gray-500">{description}</p>
-								<div className="mt-4 flex flex-col md:flex-row gap-2">
-									<span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-gray-900">
+							<div className=" mt-5">
+								<div className=" flex justify-between">
+									<h3 className="text-xl font-medium text-gray-900">
+										{product_name}
+									</h3>
+									<span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-1 text-sm font-semibold text-gray-800">
 										{brand_name}{" "}
 									</span>
+								</div>
+								<p className="mt-1 text-gray-500">{description}</p>
+								<div className="mt-4 flex flex-col md:flex-row gap-2">
+									{/* <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-gray-900">
+										{brand_name}{" "}
+									</span> */}
 									<span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-blue-600">
-										Price$: {price}{" "}
+										Price: ${price}{" "}
 									</span>
 									<span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-1 text-sm font-semibold text-indigo-600">
 										Type: {type}{" "}
