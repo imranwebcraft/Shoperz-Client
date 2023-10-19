@@ -24,26 +24,30 @@ const UpdateProduct = () => {
 		e.preventDefault();
 		const form = e.target;
 
-		const product_name = form.product_name.value;
-		const brand_name = form.brand_name.value;
-		const image = form.image.value;
-		const price = form.price.value;
-		const rating = form.rating.value;
-		const type = form.type.value;
-		const description = form.description.value;
+		const updatedProductName = form.product_name.value;
+		const updatedBrandName = form.brand_name.value;
+		const updatedImage = form.image.value;
+		const updatedPrice = form.price.value;
+		const updatedRating = form.rating.value;
+		const updatedType = form.type.value;
+		const updatedDescription = form.description.value;
+
+		console.log("Price", updatedPrice);
 
 		const updateProduct = {
-			product_name,
-			brand_name,
-			image,
-			price,
-			rating,
-			type,
-			description,
+			updatedProductName,
+			updatedBrandName,
+			updatedImage,
+			updatedPrice,
+			updatedRating,
+			updatedType,
+			updatedDescription,
 		};
 
+		console.log(updateProduct);
+
 		fetch(
-			`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products/${_id}`,
+			`https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/products/${_id}`,
 			{
 				method: "PUT",
 				headers: {
@@ -110,7 +114,7 @@ const UpdateProduct = () => {
 							</label>
 							<select
 								name="brand_name"
-								id="countries"
+								id="brand_name"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								defaultValue={brand_name}
 							>
@@ -132,13 +136,13 @@ const UpdateProduct = () => {
 								type="text"
 								name="image"
 								defaultValue={image}
-								id="company"
+								id="image"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Product image"
 								required
 							/>
 						</div>
-						{/* Pice */}
+						{/* Rating */}
 						<div>
 							<label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
 								Price
@@ -154,7 +158,6 @@ const UpdateProduct = () => {
 							/>
 						</div>
 						{/* Rating */}
-
 						<div>
 							<label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
 								Rating
@@ -163,7 +166,7 @@ const UpdateProduct = () => {
 								type="number"
 								name="rating"
 								defaultValue={rating}
-								id="price"
+								id="rating"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Rating"
 								max={5}
@@ -172,15 +175,12 @@ const UpdateProduct = () => {
 						</div>
 						{/* Type select */}
 						<div>
-							<label
-								htmlFor="countries"
-								className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-							>
+							<label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
 								Product Type
 							</label>
 							<select
 								name="type"
-								id="countries"
+								id="type"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								defaultValue={type}
 							>

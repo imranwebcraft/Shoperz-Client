@@ -28,7 +28,7 @@ const AddProduct = () => {
 		console.log(newProduct);
 
 		fetch(
-			"https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products",
+			"https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/products",
 			{
 				method: "POST",
 				headers: {

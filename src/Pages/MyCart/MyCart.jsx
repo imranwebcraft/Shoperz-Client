@@ -46,7 +46,7 @@ const MyCart = () => {
 			.then(result => {
 				if (result.isConfirmed) {
 					fetch(
-						`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/carts/${id}`,
+						`https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/carts/${id}`,
 						{
 							method: "DELETE",
 						}

@@ -24,7 +24,7 @@ const ProductDetails = () => {
 	};
 
 	const handleAddToCart = () => {
-		fetch("https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/carts", {
+		fetch("https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/carts", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

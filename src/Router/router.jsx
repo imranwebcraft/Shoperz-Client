@@ -39,7 +39,7 @@ const router = createBrowserRouter([
 				),
 				loader: () =>
 					fetch(
-						"https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/carts"
+						"https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/carts"
 					),
 			},
 			{
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
 				element: <BrandProduct />,
 				loader: () =>
 					fetch(
-						"https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products"
+						"https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/products"
 					),
 			},
 			{
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
 				),
 				loader: ({ params }) =>
 					fetch(
-						`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products/${params.id}`
+						`https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/products/${params.id}`
 					),
 			},
 			{
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
 				),
 				loader: ({ params }) =>
 					fetch(
-						`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products/${params.id}`
+						`https://shoperz-server-side-ls55uye2x-imran-it1.vercel.app/products/${params.id}`
 					),
 			},
 		],
