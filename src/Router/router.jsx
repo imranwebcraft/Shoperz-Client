@@ -37,7 +37,10 @@ const router = createBrowserRouter([
 						<MyCart />
 					</PrivateRoute>
 				),
-				loader: () => fetch("http://localhost:5000/carts"),
+				loader: () =>
+					fetch(
+						"https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/carts"
+					),
 			},
 			{
 				path: "/login",
@@ -50,7 +53,10 @@ const router = createBrowserRouter([
 			{
 				path: "/brand/:id",
 				element: <BrandProduct />,
-				loader: () => fetch("http://localhost:5000/products"),
+				loader: () =>
+					fetch(
+						"https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products"
+					),
 			},
 			{
 				path: "/product/:id",
@@ -60,7 +66,9 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: ({ params }) =>
-					fetch(`http://localhost:5000/products/${params.id}`),
+					fetch(
+						`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products/${params.id}`
+					),
 			},
 			{
 				path: "/updateproduct/:id",
@@ -70,7 +78,9 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: ({ params }) =>
-					fetch(`http://localhost:5000/products/${params.id}`),
+					fetch(
+						`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products/${params.id}`
+					),
 			},
 		],
 	},

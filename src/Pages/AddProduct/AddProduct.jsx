@@ -27,13 +27,16 @@ const AddProduct = () => {
 		};
 		console.log(newProduct);
 
-		fetch("http://localhost:5000/products", {
-			method: "POST",
-			headers: {
-				"content-type": "application/json",
-			},
-			body: JSON.stringify(newProduct),
-		})
+		fetch(
+			"https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/products",
+			{
+				method: "POST",
+				headers: {
+					"content-type": "application/json",
+				},
+				body: JSON.stringify(newProduct),
+			}
+		)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);

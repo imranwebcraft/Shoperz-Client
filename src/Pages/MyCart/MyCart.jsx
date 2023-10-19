@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import cartPhoto from "../../assets/images/cart(1).webp";
 import Footer from "../../components/Footer/Footer";
-import toast from "react-hot-toast";
 import emptyCart from "../../assets/images/emptycart.webp";
 import Swal from "sweetalert2";
 
@@ -46,9 +45,12 @@ const MyCart = () => {
 			})
 			.then(result => {
 				if (result.isConfirmed) {
-					fetch(`http://localhost:5000/carts/${id}`, {
-						method: "DELETE",
-					})
+					fetch(
+						`https://shoperz-server-side-2f3tas79t-imran-it1.vercel.app/carts/${id}`,
+						{
+							method: "DELETE",
+						}
+					)
 						.then(res => res.json())
 						.then(data => {
 							if (data.deletedCount === 1) {
