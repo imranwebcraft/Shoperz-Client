@@ -63,7 +63,7 @@ const Login = () => {
 			<Helmet>
 				<title>Shoperz | Login</title>
 			</Helmet>
-			<section className="bg-white dark:bg-gray-900">
+			<section className="bg-white dark:bg-gray-950">
 				<div className="container flex flex-col items-center justify-center h-screen px-6 mx-auto">
 					<form onSubmit={handleLogIn} className="w-full max-w-md">
 						<div className="flex justify-center mx-auto">

@@ -84,24 +84,24 @@ const MyCart = () => {
 	};
 
 	return (
-		<div>
+		<div className=" dark:bg-gray-950">
 			{/* Helmet */}
 			<Helmet>
 				<title>Shoperz | My Cart</title>
 			</Helmet>
-			<div className=" max-w-7xl mx-auto mt-12">
+			<div className=" max-w-7xl mx-auto py-16">
 				{/* Section Title */}
 				<div className="flex flex-col justify-center items-center text-center">
-					<h1 className=" text-3xl font-bold text-gray-900 ">
+					<h1 className=" text-3xl font-bold text-gray-900 dark:text-white">
 						My <span className=" text-blue-500 ">Cart</span>
 					</h1>
-					<p className=" max-w-md text-gray-500 text-sm mt-2">
+					<p className=" max-w-md text-gray-500 dark:text-gray-200 text-sm mt-2">
 						Review and manage the items in your shopping cart.
 					</p>
 					<img src={cartPhoto} alt="" />
 				</div>
 				<div
-					className="relative w-full mx-auto bg-gray-100 px-4 py-8 sm:px-6 lg:px-8"
+					className="relative w-full mx-auto bg-gray-100 dark:bg-gray-900 px-4 py-8 sm:px-6 lg:px-8"
 					aria-modal="true"
 					role="dialog"
 					tabIndex="-1"
@@ -110,10 +110,10 @@ const MyCart = () => {
 						<ul className="space-y-4">
 							{carts?.length === 0 ? (
 								<div className=" w-full flex flex-col justify-center items-center">
-									<p className=" text-3xl font-semibold text-gray-900">
+									<p className=" text-3xl font-semibold text-gray-900 dark:text-white">
 										Your cart is empty
 									</p>
-									<p className=" text-sm mt-1">
+									<p className=" font-medium dark:text-gray-200 mt-1">
 										Please add some products to your cart to get started!
 									</p>
 									<img
@@ -136,18 +136,20 @@ const MyCart = () => {
 													className="h-16 w-16 rounded object-cover"
 												/>
 												<div>
-													<h3 className="text-sm text-gray-900">
+													<h3 className="text font-medium text-gray-900 dark:text-white">
 														{product_name}
 													</h3>
-													<dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
+													<dl className="mt-0.5 space-y-px text-gray-700 dark:text-gray-200">
 														<div>
-															<dt className="inline">Brand:</dt>
-															<dd className="inline">{brand_name}</dd>
+															<dt className="inline font-medium ">Brand:</dt>
+															<dd className="inline ml-1 text-sm">
+																{brand_name}
+															</dd>
 														</div>
 
 														<div>
-															<dt className="inline">Price:</dt>
-															<dd className="inline">{price}</dd>
+															<dt className="inline font-medium">Price:</dt>
+															<dd className="inline  ml-1 text-sm">{price}</dd>
 														</div>
 													</dl>
 												</div>
@@ -184,7 +186,7 @@ const MyCart = () => {
 										</a>
 										<a
 											href="#"
-											className="inline-block text-sm text-gray-500 underline underline-offset-4 transition hover:text-gray-600"
+											className="inline-block text-sm text-gray-500 dark:text-gray-300 dark:hover:text-gray-400 underline underline-offset-4 transition duration-200 hover:text-gray-600"
 										>
 											Continue shopping
 										</a>

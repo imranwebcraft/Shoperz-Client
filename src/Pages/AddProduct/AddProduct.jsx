@@ -64,24 +64,24 @@ const AddProduct = () => {
 	};
 
 	return (
-		<>
+		<div className=" dark:bg-gray-950">
 			<Helmet>
 				<title>Shoperz | Add Product</title>
 			</Helmet>
 			<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
 				{/* Section Title */}
 				<div className=" flex flex-col justify-center items-center text-center">
-					<h1 className=" text-3xl font-bold text-gray-900 ">
+					<h1 className=" text-3xl font-bold text-gray-900 dark:text-white ">
 						Add product to the <span className=" text-blue-500 ">Database</span>
 					</h1>
-					<p className=" max-w-md text-gray-500 text-sm mt-2">
+					<p className=" max-w-md text-gray-500  dark:text-gray-200 text-sm mt-2">
 						Enter product details and click Add Product button to add the
 						product to the database
 					</p>
 					<img src={addProduct1} alt="" />
 				</div>
 
-				<form onSubmit={handleAddProduct}>
+				<form onSubmit={handleAddProduct} className="pb-16">
 					<div className="grid gap-6 mb-6 md:grid-cols-2">
 						{/* Product name */}
 						<div>
@@ -92,7 +92,7 @@ const AddProduct = () => {
 								type="text"
 								name="product_name"
 								id="product_name"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Enter product name"
 								required
 							/>
@@ -109,7 +109,7 @@ const AddProduct = () => {
 							<select
 								name="brand_name"
 								id="countries"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								defaultValue="Select Brand"
 							>
 								<option value="Select Brand">Select Brand</option>
@@ -130,7 +130,7 @@ const AddProduct = () => {
 								type="text"
 								name="image"
 								id="company"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Product image"
 								required
 							/>
@@ -144,7 +144,7 @@ const AddProduct = () => {
 								type="number"
 								name="price"
 								id="price"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Enter price"
 								required
 							/>
@@ -159,7 +159,7 @@ const AddProduct = () => {
 								type="number"
 								name="rating"
 								id="rating"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="Rating"
 								max={5}
 								required
@@ -176,7 +176,7 @@ const AddProduct = () => {
 							<select
 								name="type"
 								id="countries"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								defaultValue="Product type"
 							>
 								<option value="Product type">Product type</option>
@@ -197,13 +197,13 @@ const AddProduct = () => {
 						<textarea
 							name="description"
 							rows="4"
-							className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							className="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Write your product description here..."
 						></textarea>
 					</div>
 
 					<input
-						className="w-full text-white bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus:ring-blue-800 hover:cursor-pointer transition-all duration-300 ease-linear"
+						className="w-full mt-5 text-white bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-800 hover:cursor-pointer transition-all duration-300 ease-linear"
 						type="submit"
 						value="Add Product"
 					/>
@@ -212,7 +212,7 @@ const AddProduct = () => {
 
 			{/* Footer */}
 			<Footer />
-		</>
+		</div>
 	);
 };
 

@@ -93,7 +93,7 @@ const Register = () => {
 			<Helmet>
 				<title>Shoperz | Register</title>
 			</Helmet>
-			<section className="bg-white dark:bg-gray-900">
+			<section className="bg-white dark:bg-gray-950">
 				<div className="container flex flex-col items-center justify-center min-h-screen px-6 mx-auto">
 					<form onSubmit={handleSignUp} className="w-full max-w-md">
 						<div className="flex justify-center mx-auto">

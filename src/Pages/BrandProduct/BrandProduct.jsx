@@ -26,56 +26,57 @@ const BrandProduct = () => {
 	console.log("Filter", filterProducts);
 
 	return (
-		<div className="container px-6 py-4 mx-auto mt-5">
-			{/* Helmet */}
-			<Helmet>
-				<title> Brand Product </title>
-			</Helmet>
-
-			{/* Section Title */}
-			<div className=" mt-8 flex flex-col justify-center items-center text-center">
-				<h1 className=" text-3xl font-bold text-gray-900 ">
-					<span className=" text-blue-500 ">{findBrnadName?.brand_name}</span>{" "}
-					Store
-				</h1>
-				<p className=" max-w-md text-gray-500 text-sm mt-2">
-					Get $200–$650 in credit toward iPhone 15 or iPhone 15 Pro when you
-					trade in an iPhone 11 or higher.
-				</p>
-				<img src="" alt="" />
+		<div className=" dark:bg-gray-950">
+			<div className="container px-6 py-4 mx-auto pt-5">
+				{/* Helmet */}
+				<Helmet>
+					<title> Brand Product </title>
+				</Helmet>
+				{/* Section Title */}
+				<div className=" mt-8 flex flex-col justify-center items-center text-center">
+					<h1 className=" text-3xl font-bold text-gray-900 dark:text-white ">
+						<span className=" text-blue-500  ">
+							{findBrnadName?.brand_name}
+						</span>{" "}
+						Store
+					</h1>
+					<p className=" max-w-md text-gray-500 dark:text-gray-200 text-sm mt-2">
+						Get $200–$650 in credit toward iPhone 15 or iPhone 15 Pro when you
+						trade in an iPhone 11 or higher.
+					</p>
+					<img src="" alt="" />
+				</div>
+				{/* Slider */}
+				<Slider />
+				{/* Product Card */}
+				{filterProducts.length === 0 ? (
+					<div className="w-full flex flex-col justify-center items-center mt-20">
+						<p className="  text-3xl font-bold text-gray-900 dark:text-white">
+							No product added yet
+						</p>
+						<p className=" max-w-md text-gray-500 dark:text-gray-200 text-sm mt-2">
+							Please add some{" "}
+							<span className=" bg-neutral-50 dark:bg-gray-900 px-1 hover:bg-neutral-100 text-blue-500 underline hover:decoration-blue-400 hover:decoration-2 hover:underline-offset-2 mx-1 font-medium">
+								{" "}
+								<Link to={"/addproduct"}> Product </Link>{" "}
+							</span>
+							in this category
+						</p>
+						<figure>
+							<img src={noProduct} alt="" />
+						</figure>
+					</div>
+				) : (
+					<div className=" my-20 grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 max-w-7xl mx-auto">
+						{filterProducts?.map(product => (
+							<BrandProductCard
+								key={product._id}
+								product={product}
+							></BrandProductCard>
+						))}
+					</div>
+				)}
 			</div>
-			{/* Slider */}
-			<Slider />
-
-			{/* Product Card */}
-			{filterProducts.length === 0 ? (
-				<div className="w-full flex flex-col justify-center items-center mt-20">
-					<p className="  text-3xl font-bold text-gray-900 ">
-						No product added yet
-					</p>
-					<p className=" max-w-md text-gray-500 text-sm mt-2">
-						Please add some{" "}
-						<span className=" bg-neutral-50 px-1 hover:bg-neutral-100 text-blue-500 underline hover:decoration-blue-400 hover:decoration-2 hover:underline-offset-2 mx-1 font-medium">
-							{" "}
-							<Link to={"/addproduct"}> Product </Link>{" "}
-						</span>
-						in this category
-					</p>
-					<figure>
-						<img src={noProduct} alt="" />
-					</figure>
-				</div>
-			) : (
-				<div className=" mt-20 grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 max-w-7xl mx-auto">
-					{filterProducts?.map(product => (
-						<BrandProductCard
-							key={product._id}
-							product={product}
-						></BrandProductCard>
-					))}
-				</div>
-			)}
-
 			{/* Footer */}
 			<Footer />
 		</div>

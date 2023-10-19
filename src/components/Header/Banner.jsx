@@ -2,7 +2,7 @@ import banner from "../../assets/images/banner-image.jpg";
 
 const Banner = () => {
 	return (
-		<div className="px-6 py-28 mx-auto text-center dark:bg-gray-950 overflow-x-hidden">
+		<div className="px-6 py-28 mx-auto text-center dark:bg-gray-950">
 			<div className="max-w-4xl mx-auto">
 				<h1
 					className="
@@ -41,7 +41,7 @@ const Banner = () => {
 			</div>
 
 			<div
-				data-aos="zoom-out-up"
+				data-aos="fade-up"
 				data-aos-easing="ease-in"
 				data-aos-duration="1500"
 				className="flex justify-center mt-10"
