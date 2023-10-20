@@ -64,11 +64,11 @@ const AddProduct = () => {
 	};
 
 	return (
-		<div className=" dark:bg-gray-950">
+		<div className=" dark:bg-gray-950 py-12 lg:py-20">
 			<Helmet>
 				<title>Shoperz | Add Product</title>
 			</Helmet>
-			<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
+			<div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 				{/* Section Title */}
 				<div className=" flex flex-col justify-center items-center text-center">
 					<h1 className=" text-3xl font-bold text-gray-900 dark:text-white ">

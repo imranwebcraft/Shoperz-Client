@@ -2,9 +2,9 @@
 
 const FeatureThree = () => {
 	return (
-		<div className=" dark:bg-gray-950">
+		<div className=" dark:bg-gray-950 py-12 lg:py-24">
 			<section className=" dark:text-gray-100 container mx-auto">
-				<div className="container px-6 py-12 mx-auto">
+				<div className="container px-6 mx-auto">
 					<div className="grid items-center gap-4 xl:grid-cols-5">
 						<div
 							data-aos="zoom-in-up"

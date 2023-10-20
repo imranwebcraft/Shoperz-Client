@@ -114,18 +114,20 @@ function Navbar() {
 					>
 						{navLinks}
 
-						<div className="flex items-center mt-4 lg:mt-0">
+						<div className="flex flex-col lg:flex-row items-start gap-2 lg:items-center mt-4 lg:mt-0">
 							{user ? (
 								<>
-									<p className=" text-sm bg-indigo-100 px-2 py-1 rounded ">
-										{user.displayName}
-									</p>
-									<div className="h-8 w-h-8 mx-2">
-										<img
-											className="h-full w-full rounded-full object-cover object-center"
-											src={user.photoURL}
-											alt=""
-										/>
+									<div className="flex items-center">
+										<p className=" text-sm bg-indigo-100 px-2 py-1 rounded ">
+											{user.displayName}
+										</p>
+										<div className="h-8 w-h-8 mx-2">
+											<img
+												className="h-full w-full rounded-full object-cover object-center"
+												src={user.photoURL}
+												alt=""
+											/>
+										</div>
 									</div>
 									<Link
 										onClick={handleLogOut}

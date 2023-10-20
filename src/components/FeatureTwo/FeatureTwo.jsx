@@ -1,8 +1,8 @@
 const FeatureTwo = () => {
 	return (
-		<div className=" dark:bg-gray-900">
-			<section className="text-gray-600 body-font px-4 py-24 mx-auto max-w-7xl  pb-6 pt-16 sm:px-6 lg:px-8">
-				<div className="w-full px-5  mx-auto">
+		<div className="dark:bg-gray-900 py-12 lg:py-24">
+			<section className="text-gray-600 body-font px-4 mx-auto max-w-7xl  sm:px-6 lg:px-8">
+				<div className="w-full px-5 mx-auto">
 					{/* Section Title */}
 					<div
 						data-aos="zoom-in-up"
@@ -156,7 +156,11 @@ const FeatureTwo = () => {
 							</div>
 						</div>
 					</div>
-					<button className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-400 rounded text-lg transition-all duration-300 ease-linear hover:shadow-md">
+					<button
+						data-aos="zoom-in-up"
+						data-aos-duration="1300"
+						className="flex mx-auto mt-5 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-400 rounded text-lg transition-all duration-300 ease-linear hover:shadow-md"
+					>
 						Shop Now
 					</button>
 				</div>

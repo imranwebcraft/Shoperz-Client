@@ -5,7 +5,7 @@ import product_four from "../../assets/images/product(2).jpg";
 
 const FeatureOne = () => {
 	return (
-		<div className="dark:bg-gray-950 py-24">
+		<div className="dark:bg-gray-950 py-12 lg:py-24">
 			<div className="relative max-w-screen-xl p-4 px-4 mx-auto bg-white dark:bg-gray-950  sm:px-6 lg:px-8">
 				<div className="relative">
 					<div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">

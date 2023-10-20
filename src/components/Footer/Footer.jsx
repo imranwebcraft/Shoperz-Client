@@ -1,7 +1,7 @@
 const Footer = () => {
 	return (
-		<footer className="bg-white dark:bg-gray-900">
-			<div className="mx-auto max-w-screen-2xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
+		<footer className="bg-white dark:bg-gray-900 pt-12 lg:pt-16">
+			<div className="mx-auto max-w-screen-2xl px-4 pb-6 sm:px-6 lg:px-8">
 				<div className="lg:flex lg:items-center lg:justify-between">
 					<div className="flex justify-center text-blue-600 sm:justify-start">
 						<svg
@@ -124,7 +124,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Web Development
+									Product Listings
 								</a>
 							</li>
 
@@ -133,7 +133,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Web Design
+									Online Store Design
 								</a>
 							</li>
 
@@ -142,7 +142,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Marketing
+									Marketing Solutions
 								</a>
 							</li>
 
@@ -151,7 +151,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Google Ads
+									Paid Advertising
 								</a>
 							</li>
 						</ul>
@@ -168,7 +168,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Online Guides
+									Shopping Guides
 								</a>
 							</li>
 
@@ -177,7 +177,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Conference Notes
+									Customer Reviews
 								</a>
 							</li>
 
@@ -204,7 +204,7 @@ const Footer = () => {
 									className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75"
 									href="/"
 								>
-									Upcoming Events
+									Upcoming Sales
 								</a>
 							</li>
 						</ul>
@@ -239,7 +239,7 @@ const Footer = () => {
 									className="group flex justify-center  md:justify-start gap-1.5"
 									href="/"
 								>
-									<span className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition group-hover:text-gray-700/75">
+									<span className="text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 duration-200 transition hover:text-gray-700/75 group-hover:text-gray-300">
 										Live Chat
 									</span>
 
@@ -262,7 +262,7 @@ const Footer = () => {
 							</p>
 
 							<form className="mt-4">
-								<div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-start">
+								<div className="flex flex-col gap-4 sm:flex-row lg:flex-col  lg:items-start">
 									<label htmlFor="email" className="sr-only">
 										Email
 									</label>

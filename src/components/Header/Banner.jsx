@@ -2,7 +2,7 @@ import banner from "../../assets/images/banner-image.jpg";
 
 const Banner = () => {
 	return (
-		<div className="px-6 py-28 mx-auto text-center dark:bg-gray-950">
+		<div className="px-6 py-12 lg:py-28 mx-auto text-center dark:bg-gray-950">
 			<div className="max-w-4xl mx-auto">
 				<h1
 					className="

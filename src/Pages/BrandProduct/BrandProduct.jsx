@@ -26,8 +26,8 @@ const BrandProduct = () => {
 	console.log("Filter", filterProducts);
 
 	return (
-		<div className=" dark:bg-gray-950">
-			<div className="container px-6 py-4 mx-auto pt-5">
+		<div className=" dark:bg-gray-950 py-5 lg:py-16">
+			<div className="container px-6 mx-auto">
 				{/* Helmet */}
 				<Helmet>
 					<title> Brand Product </title>
@@ -40,9 +40,10 @@ const BrandProduct = () => {
 						</span>{" "}
 						Store
 					</h1>
-					<p className=" max-w-md text-gray-500 dark:text-gray-200 text-sm mt-2">
-						Get $200–$650 in credit toward iPhone 15 or iPhone 15 Pro when you
-						trade in an iPhone 11 or higher.
+					<p className=" max-w-2xl text-gray-500 dark:text-gray-200 text-sm mt-2">
+						Get $200–$650 in credit toward your next purchase when you trade in
+						your existing device, whether it&apos;s a smartphone, headphone,
+						PlayStation, or camera.
 					</p>
 					<img src="" alt="" />
 				</div>

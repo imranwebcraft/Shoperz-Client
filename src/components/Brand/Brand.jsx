@@ -6,7 +6,7 @@ const Brand = () => {
 	const brands = useBrands();
 
 	return (
-		<div className=" dark:bg-gray-900 py-24">
+		<div className=" dark:bg-gray-900 py-12 lg:py-24">
 			<section className="px-4 mx-auto max-w-7xl  sm:px-6">
 				{/* Section Title */}
 				<div

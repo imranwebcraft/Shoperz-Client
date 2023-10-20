@@ -56,7 +56,7 @@ const ProductDetails = () => {
 
 	return (
 		<div className=" dark:bg-gray-950">
-			<section className=" px-4 pb-6 pt-16 sm:px-6 lg:py-16">
+			<section className=" px-4  sm:px-6 py-12 lg:py-16">
 				{/* Helmet */}
 				<Helmet>
 					<title> {product_name} </title>
@@ -93,9 +93,6 @@ const ProductDetails = () => {
 										{description}
 									</p>
 									<div className="mt-4 flex flex-col md:flex-row gap-2">
-										{/* <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-gray-900">
-											{brand_name}{" "}
-										</span> */}
 										<span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-blue-600">
 											Price: ${price}{" "}
 										</span>
@@ -117,7 +114,7 @@ const ProductDetails = () => {
 						</div>
 						{/* Part Two */}
 						<div className="col-span-4 lg:col-span-8">
-							<section className="dark:bg-gray-900 dark:text-gray-100">
+							<section className="dark:bg-gray-900 dark:text-gray-100 rounded">
 								<div className="container max-w-5xl px-4 py-12 mx-auto">
 									<div className="grid gap-4 mx-4 sm:grid-cols-12">
 										<div className="col-span-12 sm:col-span-3">

@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
 	const { user, loading } = useContext(AuthContext);
 	if (loading) {
 		return (
-			<div className=" h-screen flex justify-center items-center">
+			<div className=" bg-white dark:bg-gray-950 h-screen flex justify-center items-center">
 				<ClimbingBoxLoader color="#2857cd" />
 			</div>
 		);
