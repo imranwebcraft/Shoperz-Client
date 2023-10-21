@@ -63,6 +63,9 @@ function Navbar() {
 						<Link to={"/"}>
 							<img src={logo} alt="" />
 						</Link>
+						<span className=" sm:block lg:hidden">
+							<ThemeToggle />
+						</span>
 						<div className="flex lg:hidden">
 							<button
 								onClick={toggleMenu}
@@ -106,7 +109,7 @@ function Navbar() {
 					</div>
 
 					<div
-						className={`absolute dark:bg-gray-900 inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
+						className={` absolute dark:bg-gray-900 inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
 							isOpen
 								? "translate-x-0 opacity-100"
 								: "opacity-0 -translate-x-full"
@@ -118,7 +121,7 @@ function Navbar() {
 							{user ? (
 								<>
 									<div className="flex items-center">
-										<p className=" text-sm bg-indigo-100 px-2 py-1 rounded ">
+										<p className=" text-sm bg-indigo-50 dark:bg-gray-800 dark:text-gray-200 px-2 py-1 rounded ">
 											{user.displayName}
 										</p>
 										<div className="h-8 w-h-8 mx-2">
@@ -144,7 +147,9 @@ function Navbar() {
 									<span>Login</span>
 								</Link>
 							)}
-							<ThemeToggle />
+							<span className=" hidden lg:block">
+								<ThemeToggle />
+							</span>
 						</div>
 					</div>
 				</div>
