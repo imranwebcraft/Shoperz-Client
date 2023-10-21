@@ -113,10 +113,10 @@ const MyCart = () => {
 							<ul className="space-y-4">
 								{carts?.length === 0 ? (
 									<div className=" w-full flex flex-col justify-center items-center">
-										<p className=" text-3xl font-semibold text-gray-900 dark:text-white">
+										<p className=" text-3xl text-center font-semibold text-gray-900 dark:text-white">
 											Your cart is empty
 										</p>
-										<p className=" font-medium dark:text-gray-200 mt-1">
+										<p className=" text-sm lg:text-base text-center  lg:font-medium dark:text-gray-200 mt-1">
 											Please add some products to your cart to get started!
 										</p>
 										<img

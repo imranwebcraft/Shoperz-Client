@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const ProductDetails = () => {
 	const { user } = useContext(AuthContext);
@@ -107,6 +108,7 @@ const ProductDetails = () => {
 										onClick={handleAddToCart}
 										className="inline-flex mt-5 h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-blue-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-blue-400 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300 disabled:shadow-none"
 									>
+										<AiOutlineShoppingCart className=" text-lg" />
 										<span>Add To Cart</span>
 									</button>
 								</div>
@@ -115,14 +117,14 @@ const ProductDetails = () => {
 						{/* Part Two */}
 						<div className="col-span-4 lg:col-span-8">
 							<section className="dark:bg-gray-900 dark:text-gray-100 rounded">
-								<div className="container max-w-5xl px-4 py-12 mx-auto">
-									<div className="grid gap-4 mx-4 sm:grid-cols-12">
+								<div className="container w-full lg:max-w-5xl  px-4 py-12 mx-auto">
+									<div className="grid gap-4 mx-0  lg:mx-4 sm:grid-cols-12">
 										<div className="col-span-12 sm:col-span-3">
 											<div className="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-blue-500">
 												<h3 className="text-3xl font-semibold">
 													Order Process
 												</h3>
-												<span className="text-sm font-bold tracki uppercase dark:text-gray-400">
+												<span className="text-xs lg:text-sm font-medium tracki uppercase dark:text-gray-400">
 													Follow these steps to get your product
 												</span>
 											</div>
@@ -139,8 +141,8 @@ const ProductDetails = () => {
 														your needs.
 													</p>
 												</div>
-												<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-500">
-													<h3 className="text-xl font-semibold tracki">
+												<div className=" w-full flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-500">
+													<h3 className="text-xl font-semibold -tracking-normal">
 														Step 2: Add to Cart
 													</h3>
 													<p className="mt-3">
@@ -149,7 +151,7 @@ const ProductDetails = () => {
 														items will be saved for checkout.
 													</p>
 												</div>
-												<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-500">
+												<div className=" w-full flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-500">
 													<h3 className="text-xl font-semibold tracki">
 														Step 3: Place Your Order
 													</h3>

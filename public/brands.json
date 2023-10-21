@@ -2,7 +2,18 @@
 	{
 		"id": 1,
 		"brand_name": "Apple",
-		"brand_image": "https://i.ibb.co/zG4nwLh/apple.png"
+		"brand_image": "https://i.ibb.co/x8x7fr4/Apple-Logo-1977.png"
+	},
+	{
+		"id": 5,
+		"brand_name": "Samsung",
+		"brand_image": "https://i.ibb.co/tMzbKcQ/Samsung-Logo-1993.png"
+	},
+
+	{
+		"id": 3,
+		"brand_name": "Sony",
+		"brand_image": "https://i.ibb.co/Mcw35G5/sony-logo-blue-RGB.png"
 	},
 	{
 		"id": 2,
@@ -10,23 +21,14 @@
 		"brand_image": "https://i.ibb.co/MfRtJG1/google.png"
 	},
 	{
-		"id": 3,
-		"brand_name": "Sony",
-		"brand_image": "https://i.ibb.co/LdzwqF5/sony.png"
-	},
-	{
 		"id": 4,
 		"brand_name": "Intel",
 		"brand_image": "https://i.ibb.co/b6DtK2d/intel.png"
 	},
-	{
-		"id": 5,
-		"brand_name": "Samsung",
-		"brand_image": "https://i.ibb.co/bJPgtNY/samsung.png"
-	},
+
 	{
 		"id": 6,
 		"brand_name": "Microsoft",
-		"brand_image": "https://i.ibb.co/wRZsH5z/microsoft.png"
+		"brand_image": "https://i.ibb.co/fGg9JXt/mycrosoft1.png"
 	}
 ]
