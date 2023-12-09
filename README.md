@@ -23,3 +23,24 @@ Welcome to Shoperz, your one-stop online shopping destination! Here's what you n
 Your feedback and suggestions are invaluable to us. Feel free to reach out to us at [shoperz@gmail.com] with any questions or comments. We look forward to providing you with a seamless online shopping experience.
 
 ✨ **Happy Shopping!** 🛍️
+
+
+## Technology Stack
+
+### Frontend
+
+- React
+- Tailwind CSS
+- Firebase
+- React Router
+- Axios
+
+### Backend
+
+- Express
+- MongoDB
+- CORS
+- Dotenv
+- Cookieparser
+
+
